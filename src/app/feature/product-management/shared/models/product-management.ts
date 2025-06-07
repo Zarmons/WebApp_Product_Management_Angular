@@ -1,12 +1,8 @@
-import { FormControl } from '@angular/forms';
-
 export interface CreateProduct {
-  name: FormControl<string>,
-  price: FormControl<number>,
-  category: FormControl<string>,
-  description: FormControl<string>,
-  availability: FormControl<string>,
+  id: string;
+  name: string;
+  price: number;
+  category: string;
+  description: string;
+  availability: string;
 }
-
-
-

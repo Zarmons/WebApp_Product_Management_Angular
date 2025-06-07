@@ -18,8 +18,8 @@
       <mat-form-field>
         <mat-label>Categoría</mat-label>
         <mat-select formControlName="category">
-          <mat-option value="one">Categoría1</mat-option>
-          <mat-option value="two">Categoría2</mat-option>
+          <mat-option value="muebles">Muebles</mat-option>
+          <mat-option value="aseo">Aseo</mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field>
@@ -32,8 +32,8 @@
       <mat-form-field>
         <mat-label>Disponibilidad</mat-label>
         <mat-select formControlName="availability">
-          <mat-option value="one">Disponible</mat-option>
-          <mat-option value="two">No disponible</mat-option>
+          <mat-option value="Disponible">Disponible</mat-option>
+          <mat-option value="No disponible">No disponible</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
@@ -42,5 +42,5 @@
 
 <div>
   <button matButton="elevated">Cancelar</button>
-  <button matButton="elevated" (click)="createDrug()">Guardar</button>
+  <button matButton="elevated" [disabled]="!CreateProductForm.valid" (click)="createProducts()">Guardar</button>
 </div>

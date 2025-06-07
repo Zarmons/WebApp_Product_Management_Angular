@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CreateProduct } from '../shared/models/product-management';
 
 @Component({
@@ -14,26 +14,31 @@ export class CreateProductComponent {
   data: any = "";
 
   ngOnInit() {
-
-    this.CreateProductForm = new FormGroup <CreateProduct>({
-      name: new FormControl('', {nonNullable: true}),
-      price:new FormControl(0, {nonNullable: true}),
-      category:new FormControl('', {nonNullable: true}),
-      description:new FormControl('', {nonNullable: true}),
-      availability: new FormControl('', {nonNullable: true}),
+    this.CreateProductForm = new FormGroup({
+      id: new FormControl('', { nonNullable: true }),
+      name: new FormControl('', {
+        nonNullable: true,
+        validators: [Validators.required],
+      }),
+      price: new FormControl(0, {
+        nonNullable: true,
+        validators: [Validators.required, Validators.min(0.1)],
+      }),
+      category: new FormControl('', { nonNullable: true }),
+      description: new FormControl('', { nonNullable: true }),
+      availability: new FormControl('', { nonNullable: true }),
     });
-
   }
 
-  createDrug() {
-    // this.messageService.add({ severity: 'success', summary: 'Agregado', detail: 'El medicamento fue agregado con éxito' });
-    // this.displayCreate = false;
-    // this.displayValidateCreate = false;
+  createProducts() {
+    const lastId = parseInt(localStorage.getItem("lastId") ?? "0");
+    const newId = lastId + 1;
+    this.CreateProductForm.value.id = newId;
     this.data = this.CreateProductForm.value;
-    // this.DispensaryForm.value.expiration = new Date().toLocaleDateString(this.DispensaryForm.value.expiration);
-    // this.DispensaryForm.value.manufacture = new Date().toLocaleDateString(this.DispensaryForm.value.manufacture);
     this.createProduct.push(this.data);
-    localStorage.setItem("product",JSON.stringify(this.createProduct));
+    localStorage.setItem("product", JSON.stringify(this.createProduct));
+    localStorage.setItem("lastId", newId.toString());
     this.CreateProductForm.reset();
   }
+  
 }
