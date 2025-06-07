@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  margin: auto;
+}
+
+.logo {
+  list-style: none;
+  text-align: center;
+  width: 10%;
+}
+
+img {
+  width: 100px;
+  height: 50px;
+  margin: 6px;
+
+}
+
+.nav {
+  list-style: none;
+  text-align: center;
+  width: 90%;
+}
+
+.nav li {
+  display: inline-block;
+  font-size: 1.6rem;
+  margin: 21px 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+a{
+  color: white;
+  text-decoration: none;
+}
+
+.nav li a::after {
+  content: " | ";
+}

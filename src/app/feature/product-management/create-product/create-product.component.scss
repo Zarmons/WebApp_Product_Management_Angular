@@ -1,0 +1,19 @@
+.container-form {
+  display: flex;
+  justify-content: space-evenly;
+  column-gap: 8px;
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.rows-sell {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 8px;
+}
