@@ -33,7 +33,13 @@ export class ListProductComponent implements OnInit {
   productoDelete: any = "";
   availabilityFilter: string = "";
   categoryFilter: string = "";
-  data: CreateProduct[] = JSON.parse(localStorage.getItem("product") || "[]");
+  data: CreateProduct[] = JSON.parse(
+    localStorage.getItem("product") || "[]"
+  ).map((p: any) => ({
+    ...p,
+    availability: p.availability === true || p.availability === "true",
+  }));
+
   displayedColumns: string[] = [
     "name",
     "price",
@@ -64,17 +70,18 @@ export class ListProductComponent implements OnInit {
   }
   ngOnInit(): void {
     this.dataSource.filterPredicate = (data, filter: string) => {
-    const filters = JSON.parse(filter);
-    let validate = (filters.availability === "true")
+      const filters = JSON.parse(filter);
+
       const availabilityFilter =
         filters.availability !== ""
-          ? data.availability === String(validate)
+          ? String(data.availability) === filters.availability
           : true;
+
       const categoryFilter =
         filters.category !== "" ? data.category === filters.category : true;
+
       return availabilityFilter && categoryFilter;
     };
-
 
     this.CreateProductForm = new FormGroup({
       name: new FormControl("", [Validators.required]),
@@ -129,6 +136,7 @@ export class ListProductComponent implements OnInit {
   }
 
   applyFilter() {
+    console.log("-->", this.availabilityFilter);
     const filterValues = {
       availability: this.availabilityFilter,
       category: this.categoryFilter,
