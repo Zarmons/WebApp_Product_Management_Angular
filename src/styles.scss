@@ -1,4 +1,192 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+$primaryColor: #ff9900;
+$primaryColorHover: #ac6700;
+$segundaryColor: rgb(240, 240, 240);
+$segundaryColorHover: rgb(78, 78, 78);
+$primaryTextColor: #2e2e2e;
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: $segundaryColor;
+}
+
+.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: #2e2e2e;
+}
+
+.mat-mdc-form-field.mat-focused.mat-primary .mat-mdc-select-arrow {
+  color: $primaryColor;
+}
+
+.mdc-text-field .mdc-text-field__input {
+  caret-color: $primaryColor;
+}
+
+.mdc-text-field--filled .mdc-line-ripple::after {
+  border-bottom-color: $primaryColor;
+}
+
+.mdc-menu-surface {
+  background-color: $segundaryColor;
+}
+
+.mat-primary
+  .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled)
+  .mdc-list-item__primary-text {
+  color: $primaryColor;
+}
+
+.mat-primary .mat-pseudo-checkbox-checked.mat-pseudo-checkbox-minimal::after,
+.mat-primary
+  .mat-pseudo-checkbox-indeterminate.mat-pseudo-checkbox-minimal::after {
+  color: $primaryColor;
+}
+
+.mat-mdc-table {
+  background: $segundaryColor;
+}
+
+.mdc-data-table__header-cell {
+  background-color: $primaryColor !important;
+}
+
+.mat-mdc-icon-button.mat-primary,
+.mat-mdc-icon-button.mat-warn {
+  --mat-mdc-button-persistent-ripple-color: $segundaryColor;
+  --mat-mdc-button-ripple-color: #ff99002b;
+}
+
+.mat-mdc-icon-button.mat-primary,
+.mat-mdc-icon-button.mat-warn {
+  color: $primaryColor;
+}
+
+.mdc-data-table__table {
+  width: 96%;
+  min-width: 0 !important;
+}
+
+.mdc-dialog__actions {
+  flex-direction: column;
+}
+
+.mat-mdc-paginator-outer-container {
+  display: flex;
+  justify-content: center;
+}
+
+.mat-mdc-paginator-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  width: 96%;
+  background: $segundaryColor;
+  margin: 0rem 2rem;
+  justify-content: flex-end;
+}
+
+.mat-mdc-paginator {
+  background: #42424200;
+  color: $primaryTextColor;
+}
+
+.mat-elevation-z8,
+.mat-mdc-elevation-specific.mat-elevation-z8 {
+  box-shadow: none;
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label,
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input,
+.mdc-list-item__primary-text,
+.mat-mdc-select-value,
+.mdc-data-table__pagination-total,
+.mdc-data-table__pagination-rows-per-page-label,
+.mdc-data-table__cell {
+  color: $primaryTextColor;
+}
+
+.mdc-text-field--outlined:not(.mdc-text-field--disabled)
+  .mdc-notched-outline__leading,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled)
+  .mdc-notched-outline__notch,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled)
+  .mdc-notched-outline__trailing {
+  border-color: $primaryTextColor;
+}
+
+.mdc-text-field--outlined:not(.mdc-text-field--disabled):not(
+    .mdc-text-field--focused
+  ):hover
+  .mdc-notched-outline
+  .mdc-notched-outline__leading,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled):not(
+    .mdc-text-field--focused
+  ):hover
+  .mdc-notched-outline
+  .mdc-notched-outline__notch,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled):not(
+    .mdc-text-field--focused
+  ):hover
+  .mdc-notched-outline
+  .mdc-notched-outline__trailing {
+  border-color: $primaryTextColor;
+}
+
+.mdc-list-item--selected .mdc-list-item__primary-text,
+.mdc-list-item--activated .mdc-list-item__primary-text,
+.mat-mdc-select-arrow {
+  color: $primaryColor;
+}
+
+.mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused
+  .mdc-notched-outline__leading,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused
+  .mdc-notched-outline__notch,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled).mdc-text-field--focused
+  .mdc-notched-outline__trailing {
+  border-color: $primaryTextColor;
+}
+
+.mat-mdc-slide-toggle .mdc-form-field {
+  color: $primaryTextColor;
+}
+
+.mat-mdc-snack-bar-container {
+  --mdc-snackbar-container-color: #008321;
+}
+
+.mat-mdc-snack-bar-container .mdc-snackbar__label {
+  color: white !important;
+}
+
+.mdc-form-field {
+  display: flex;
+  vertical-align: middle;
+  flex-direction: column-reverse;
+  align-content: stretch;
+  align-items: center;
+}
+
+.mat-mdc-slide-toggle {
+  display: flex;
+  align-items: center;
+}
+.mat-mdc-slide-toggle .mdc-switch:enabled .mdc-switch__track::after {
+    background: $primaryColor !important;
+}
+.mat-mdc-slide-toggle .mdc-switch:enabled:hover:not(:focus):not(:active) .mdc-switch__track::after {
+  background: $primaryColorHover !important;
+}
+
+.mat-mdc-slide-toggle .mdc-switch.mdc-switch--selected:enabled .mdc-switch__icon {
+    fill:  #fff !important;
+}

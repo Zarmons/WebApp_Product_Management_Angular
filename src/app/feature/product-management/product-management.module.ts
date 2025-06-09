@@ -8,12 +8,16 @@ import { EditProductComponent } from './edit-product/edit-product.component';
 import { DeleteProductComponent } from './delete-product/delete-product.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ReactiveFormsModule } from '@angular/forms';
-import {MatSelectModule} from  '@angular/material/select' ;
-import {MatInputModule} from  '@angular/material/input' ;
-import {MatFormFieldModule} from  '@angular/material/form-field' ;
-import {MatTableModule} from '@angular/material/table';
-import {MatIconModule} from '@angular/material/icon';
+import { MatSelectModule } from  '@angular/material/select' ;
+import { MatInputModule } from  '@angular/material/input' ;
+import { MatFormFieldModule } from  '@angular/material/form-field' ;
+import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 
 
 @NgModule({
@@ -33,7 +37,10 @@ import { MatButtonModule } from '@angular/material/button';
     MatSelectModule,
     MatTableModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    MatPaginatorModule
   ]
 })
 export class ProductManagementModule { }

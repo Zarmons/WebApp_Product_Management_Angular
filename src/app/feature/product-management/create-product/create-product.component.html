@@ -1,3 +1,4 @@
+<!-- Formulario para crear productos -->
 <form [formGroup]="CreateProductForm">
   <div class="container-form">
 
@@ -5,6 +6,14 @@
       <mat-form-field>
         <mat-label>Nombre del producto</mat-label>
         <input matInput formControlName="name">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Categoría</mat-label>
+        <mat-select formControlName="category">
+          <mat-option *ngFor="let categoria of categorias" [value]="categoria.value">
+            {{ categoria.label }}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
       <mat-form-field floatLabel="always">
         <mat-label>Precio</mat-label>
@@ -16,31 +25,28 @@
 
     <div class="rows">
       <mat-form-field>
-        <mat-label>Categoría</mat-label>
-        <mat-select formControlName="category">
-          <mat-option value="muebles">Muebles</mat-option>
-          <mat-option value="aseo">Aseo</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field>
         <mat-label>Descripción</mat-label>
         <textarea matInput formControlName="description"></textarea>
       </mat-form-field>
+      <mat-slide-toggle formControlName="availability">
+        ¿Disponible?
+      </mat-slide-toggle>
     </div>
-
-    <div class="rows">
-      <mat-form-field>
-        <mat-label>Disponibilidad</mat-label>
-        <mat-select formControlName="availability">
-          <mat-option value="Disponible">Disponible</mat-option>
-          <mat-option value="No disponible">No disponible</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
+  </div>
+  <div class="container-btn">
+    <button class="clear-btn" (click)="this.CreateProductForm.reset()">limpiar</button>
+    <button class="save-btn" [disabled]="!CreateProductForm.valid" (click)="openDialog()">Crear</button>
   </div>
 </form>
 
-<div>
-  <button matButton="elevated">Cancelar</button>
-  <button matButton="elevated" [disabled]="!CreateProductForm.valid" (click)="createProducts()">Guardar</button>
-</div>
+<!-- Dialogo para validar creacion -->
+<ng-template #dialogTemplate>
+  <h2 mat-dialog-title>{{ 'Validación' }}</h2>
+  <mat-dialog-content class="mat-typography">
+    <p>¿Esta seguro de crear este producto?</p>
+    <div class="container-btn">
+      <button class="clear-btn" mat-dialog-close>Cerrar</button>
+      <button class="save-btn" [disabled]="!CreateProductForm.valid" (click)="createProducts()">Guardar</button>
+    </div>
+  </mat-dialog-content>
+</ng-template>

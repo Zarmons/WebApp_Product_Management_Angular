@@ -1,19 +1,85 @@
-.container-form {
+@import "../../../../styles.scss";
+
+// Estilo para componente en general
+::ng-deep app-create-product {
+  display: grid;
+  justify-items: center;
+}
+
+// Estilos para el formulario
+form {
+  margin: 3%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  width: 70%;
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   display: flex;
-  justify-content: space-evenly;
-  column-gap: 8px;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.container-form {
+  display: grid;
+  gap: 16px;
 }
 
 .rows {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 16px;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
-.rows-sell {
+mat-form-field {
+  flex: 1;
+  min-width: 240px;
+}
+
+
+// Estilos para los diferentes botones
+.container-btn {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   gap: 8px;
+}
+
+button {
+  color: $primaryTextColor;
+  width: 150px;
+  height: 40px;
+  border-radius: 1px 12px;
+  border: 1px solid #ffffff;
+  box-shadow: 4px 4px 5px #9c9c9c;
+  cursor: pointer;
+}
+
+.clear-btn {
+  background: $segundaryColorHover;
+  color: #ffffff;
+}
+
+.clear-btn:hover {
+  background: $segundaryColor;
+  color: $primaryTextColor;
+}
+
+.save-btn {
+  background: $primaryColor;
+}
+
+.save-btn:hover {
+  background: $primaryColorHover;
+  color: #ffffff;
+}
+
+// Estilos del dialogo
+h2,
+mat-dialog-content {
+  background: #ffffff;
+  margin: 0;
+  color: $primaryTextColor !important;
+}
+
+p {
+  color: $primaryTextColor;
 }

@@ -1,0 +1,71 @@
+@import "../../../../styles.scss";
+
+  // Estilos para el formulario
+  form {
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container-form {
+    display: grid;
+    gap: 16px;
+  }
+
+  .rows {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  mat-form-field {
+    flex: 1;
+    min-width: 240px;
+    margin: 2rem 0rem 0rem 2rem;
+}
+
+// Estilos para los diferentes botones
+.container-btn {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.container-btn > button {
+  width: 150px;
+  height: 40px;
+  border-radius: 1px 12px;
+  border: 1px solid #ffffff;
+  box-shadow: 4px 4px 5px #9c9c9c;
+  cursor: pointer;
+}
+
+.clear-btn {
+  background: $segundaryColor;
+}
+
+.clear-btn:hover {
+  background: $segundaryColorHover;
+  color: #ffffff;
+}
+
+.save-btn {
+  background: $primaryColor;
+}
+
+.save-btn:hover {
+  background: $primaryColorHover;
+  color: #ffffff;
+}
+
+// Estilos del dialogo
+h2,
+mat-dialog-content {
+  background: #ffffff;
+  margin: 0;
+  color: $primaryTextColor !important;
+}
+
+p {
+  color: $primaryTextColor;
+}
