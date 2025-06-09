@@ -4,8 +4,6 @@ import { CommonModule } from '@angular/common';
 import { ProductManagementRoutingModule } from './product-management-routing.module';
 import { CreateProductComponent } from './create-product/create-product.component';
 import { ListProductComponent } from './list-product/list-product.component';
-import { EditProductComponent } from './edit-product/edit-product.component';
-import { DeleteProductComponent } from './delete-product/delete-product.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from  '@angular/material/select' ;
@@ -23,9 +21,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 @NgModule({
   declarations: [
     CreateProductComponent,
-    ListProductComponent,
-    EditProductComponent,
-    DeleteProductComponent
+    ListProductComponent
   ],
   imports: [
     CommonModule,
